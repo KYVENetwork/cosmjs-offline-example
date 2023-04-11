@@ -119,3 +119,18 @@ curl -s https://api-explorer.kyve.network/cosmos/tx/v1beta1/txs/e966695d16667d78
 ```
 
 **Again: We highly recommend using comsjs for querying transactions** 
+
+
+### Reading the transaction result
+
+The transaction query also returns information about the execution of the 
+transaction. Using the example above:
+
+```shell
+curl -s https://api-explorer.kyve.network/cosmos/tx/v1beta1/txs/e966695d16667d78f132ca310c556ae0608ad281f386a879af203d4bd0df690a | jq .tx_response
+```
+
+Some values are encoded with base64 and need to manually decoded.
+If the field `code` is `0`, then the transaction was successful. In this
+example the tranaction was not successful. The reason can be found in the
+`raw_log` field. (In this example: `"raw_log": "out of gas in location: ReadFlat; gasWanted: 177988, gasUsed: 178718: out of gas"`)
