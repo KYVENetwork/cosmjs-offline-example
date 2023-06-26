@@ -130,7 +130,9 @@ transaction. Using the example above:
 curl -s https://api-explorer.kyve.network/cosmos/tx/v1beta1/txs/e966695d16667d78f132ca310c556ae0608ad281f386a879af203d4bd0df690a | jq .tx_response
 ```
 
-Some values are encoded with base64 and need to manually decoded.
+Some values are encoded with base64 and need to be decoded manually.
 If the field `code` is `0`, then the transaction was successful. In this
-example the tranaction was not successful. The reason can be found in the
-`raw_log` field. (In this example: `"raw_log": "out of gas in location: ReadFlat; gasWanted: 177988, gasUsed: 178718: out of gas"`)
+example the transaction was not successful. The reason can be found in the
+`raw_log` field. (In this example: `"raw_log": "out of gas in location: 
+ReadFlat; gasWanted: 177988, gasUsed: 178718: out of gas"`) The user did
+not provide enough gas.

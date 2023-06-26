@@ -4,9 +4,7 @@ In this repository we demonstrate the use of cosmjs for offline signing.
 The entire process is heavily commented in `index.ts`. One needs
 to manually add a mnemonic to the source code.
 
-
-
-## Get started
+## Getting started
 
 You need yarn and typescript. Run
 
